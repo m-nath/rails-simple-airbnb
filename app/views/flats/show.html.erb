@@ -1,0 +1,61 @@
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+
+<%= link_to "Home", flats_path %>
+
+<div class="banner">
+  <img src="http://rockmystyle.co.uk/wp-content/gallery/greg-exterior/1254_d_and_g_2a_dempster_road_garden1-1.jpg" height="300px" width="100%" alt="First slide">
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <h1 class="display-5"><%= @flat.name %></h1>
+        <p class="lead"><%= @flat.address %></p>
+     </div>
+
+
+    <div class="card">
+      <h2>A bit more about this flat . . . </h2>
+        <p><%= @flat.description %></p>
+        <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibS1uYXRoIiwiYSI6ImNqeWpzMXI4dDA2ZjUzZ212NGl2c25jaHgifQ.OT1OVWTBfEvU7hKjPgsDkA'>
+    </div>
+
+    <div class="col-6">
+      <div class="card">
+        <h3>Book this place!</h3>
+          <div class="form-group row">
+            <div class="col-10">
+              <div class="input-group-prepend">
+                <div class="input-group-text">Start:</div>
+                  <input class="form-control" type="date" value="date" id="date-input">
+                </div>
+              </div>
+            </div>
+            <div class="col-10">
+              <div class="input-group-prepend">
+                <div class="input-group-text">To:</div>
+                  <input class="form-control" type="date" value="date" id="date-input">
+                </div>
+              </div>
+            </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Details</h2>
+    <div class="row">
+      <i class="fas fa-users"> <%= @flat.number_of_guests %></i>
+      <i class="fas fa-euro-sign"> <%= @flat.price_per_night %></i>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row"></div>
+      <h3>Share</h3>
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-pinterest-square"></i>
+        <i class="fas fa-envelope-square"></i>
+    </div>
+  </div>

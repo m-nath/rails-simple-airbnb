@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Simple AirBnB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/flats/new">Add Flats <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<h1>All our Flats</h1>
+
+<div class="card-deck  m-5">
+  <% @flats.each do |flat| %>
+  <div class="card">
+    <div class="card-body">
+      <img class="card-img-top" src="http://rockmystyle.co.uk/wp-content/gallery/greg-exterior/1254_d_and_g_2a_dempster_road_garden1-1.jpg" height="120" alt="Card image cap">
+      <h5 class="card-title"><%= flat.name %></h5>
+      <p class="card-text"><%= flat.address %></p>
+      <i class="fas fa-users"> <%= flat.number_of_guests %></i>
+      <i class="fas fa-euro-sign"> <%= flat.price_per_night %></i>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><%= link_to "More info", flat_path(flat) %></small>
+      <small class="text-warning"><%= link_to "Edit", edit_flat_path(flat) %></small>
+      <small class="text-danger"><%= link_to "Delete", flat_path(flat), method: :delete %></small>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+  </div>
+</div>
